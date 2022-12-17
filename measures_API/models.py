@@ -6,7 +6,7 @@ class Measure(models.Model):
     device_id = models.IntegerField(verbose_name='ID Dispositivo')
     measure_value = models.DecimalField(verbose_name='Medida', decimal_places=2, max_digits=5)
     measure_unit = models.CharField(verbose_name='Unidad de medida', max_length=10)
-    measure_date = models.DateTimeField(verbose_name='Fecha de la medida', editable=False)
+    measure_date = models.DateTimeField(verbose_name='Fecha de la medida', editable=False, null=True, auto_now_add=True)
 
     def __str__(self):
         return '%d' % self.id
